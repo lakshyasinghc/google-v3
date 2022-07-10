@@ -1,5 +1,5 @@
-import Head from 'next/head'
-
+import Head from 'next/head'; 
+import Header from '../components/Header'; 
 export default function Home() {
   return (
     <div >
@@ -10,10 +10,11 @@ export default function Home() {
       </Head>
 
 
-      <h1>Hello World</h1>
+      {/* Header */}
+      <Header/>
+      {/* Body */}
+      {/*  */}
       
     </div>
   )
 }
-//  git config --global user.email "you@example.com"
-//   git config --global user.name "Your Name"
