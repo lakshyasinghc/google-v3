@@ -1,5 +1,7 @@
 import Head from 'next/head'; 
-import Header from '../components/Header'; 
+import Header from '../components/Header';
+import Image from 'next/image' ; 
+import {SearchIcon,MicrophoneIcon} from '@heroicons/react/outline' ; 
 export default function Home() {
   return (
     <div >
@@ -13,7 +15,26 @@ export default function Home() {
       {/* Header */}
       <Header/>
       {/* Body */}
-      {/*  */}
+      <form className="flex flex-col items-center mt-40">
+        <Image 
+        src={"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.jEnEqftEVGcmHPOEiQ4NdgHaDt%26pid%3DApi&f=1"}
+        width="300" height="100"
+        objectFit='cover'
+        />
+        <div className='flex  items-center w-full mt-5 mx-auto max-w-[90%] border border-gray-200 px-5 py-3  rounded-full hover:shadow-lg focus-within:shadow-lg sm: max-w-xl lg:max-w-2xl'>
+          <SearchIcon className='h-5 text-gray-500 '/>
+          <input type="text" className='flex-grow focus:outline-none  mx-3 rounded-lg'  />
+          <MicrophoneIcon className='h-5'/>
+        </div>
+        <div className="flex flex-col mt-8  sm:flex-row sm:justify-center" >
+        <button  className='btn'>Google Search</button>
+        <button  className='btn'>I'm Feeling Lucky</button>
+        </div>
+
+   
+      </form>
+
+      {/* Footer */}
       
     </div>
   )
