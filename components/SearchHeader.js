@@ -4,6 +4,7 @@ import Image from 'next/image';
 import {useRef} from 'react'; 
 import { XIcon,MicrophoneIcon,SearchIcon } from '@heroicons/react/outline';
 import User from './User';
+import SearchHeaderOptions from './SearchHeaderOptions';
 
 export default function SearchHeader() {
     const router = useRouter(); 
@@ -14,7 +15,7 @@ export default function SearchHeader() {
         if(!term.trim()){
             return ; 
         }
-        router.push(`/search?term=${term.trim()}`); 
+        router.push(`/search?term=${term.trim()}&searchType=`); 
     }
     console.log("value of router is equal to ",router);
   return (
@@ -30,12 +31,13 @@ export default function SearchHeader() {
         <form className="flex border border-gray-200 rounded-full shadow-lg px-6 py-3 ml-10 mr-5 flex-grow max-w-3xl items-center">
             <input type="text" className='w-full focus:outline-none' defaultValue={router.query.term} ref={searchInputRef}/>
             <XIcon className='h-7 text-gray-500 cursor-pointer sm:mr-3 '  onClick={()=>{searchInputRef.current.value=""}}/>
-            <MicrophoneIcon className='h-6 hidden sm:inline-flex text-blue-500 pl-4 border-l-2 border-gray-300 mr-3 ' />
-            <SearchIcon className='h-6 hidden sm:inline-flex text-blue-500' onClick={search}/>
+            <MicrophoneIcon className='h-6 hidden sm:inline-flex text-green-500 pl-4 border-l-2 border-gray-300 mr-3 ' />
+            <SearchIcon className='h-6 hidden sm:inline-flex text-green-500 cursor-pointer' onClick={search}/>
            <button type='submit' hidden onClick={search}/>
           </form>
         <User className="ml-auto whitespace-nowrap"/>
     </div>
+    <SearchHeaderOptions/>
     </header>
   )  
 }
