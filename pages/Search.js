@@ -5,7 +5,7 @@ import SearchResults from '../components/SearchResults';
 import Response from '../Response';
 import {useRouter} from 'next/router';
 import ImageResults from '../components/ImageResults';
-export default function search({results}) {
+export default function Search({results}) {
     console.log("results = "  ,results);
     const router= useRouter(); 
   return (
